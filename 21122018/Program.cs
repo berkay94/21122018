@@ -16,7 +16,7 @@ namespace _21122018
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Firmalar());
+            Application.Run(new Kisi());
         }
     }
 }
