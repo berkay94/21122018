@@ -33,7 +33,7 @@ namespace _21122018
                 kisiler.Cep = maskedTextBoxCep.Text;
                 kisiler.Istel = maskedTextBoxIstel.Text;
                 kisiler.Email = textBoxEmail.Text;
-                kisiler.FirmaId = int.Parse(textBoxFırmaId.Text);
+                kisiler.FirmaId = textBoxFırmaId.Text;
                 kisiler.TcNo = textBoxTc.Text;
                 
 

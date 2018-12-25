@@ -54,9 +54,9 @@ namespace _21122018
             set { _email = value; }
         }
 
-        private int _firmaId;
+        private string _firmaId;
 
-        public int FirmaId
+        public string FirmaId
         {
             get { return _firmaId; }
             set { _firmaId = value; }
@@ -77,7 +77,7 @@ namespace _21122018
             Cep = "";
             Istel = "";
             Email = "";
-            //FirmaId = 1;
+            FirmaId = "";
             TcNo = "";
         }
 
@@ -142,12 +142,20 @@ namespace _21122018
                 kisi.Cep = rdr["cep"].ToString();
                 kisi.Istel = rdr["istel"].ToString();
                 kisi.Email = rdr["email"].ToString();
-                //kisi.FirmaId = int.Parse(rdr["firmaID"].ToString());
+                kisi.FirmaId =rdr["firmaID"].ToString();
+                if (kisi.FirmaId =="")
+                    kisi.FirmaId = "1";
 
-                
+
+
+
                 tc = rdr["TcKimlikNo"].ToString();
-                if (tc.Length> 0)
-                    kisi.TcNo = tc.Substring(0,3)+"********";
+                if (tc.Length > 0 && tc != "0")
+                    kisi.TcNo = tc.Substring(0, 3) + "********";
+                else if (tc == "0")
+                    kisi.TcNo = tc.Substring(0, 1) + "********";
+                else if (tc == "")
+                    kisi.TcNo = "Tc Yok";
                 else
                     kisi.TcNo = tc;
                 
